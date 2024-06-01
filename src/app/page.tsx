@@ -1,12 +1,14 @@
 import Banner from "@/pages/home/Banner";
-import { VortexDemo } from "@/pages/home/VortexDemo";
 
-import Image from "next/image";
+import { SparklesPreview } from "../pages/home/SparklesPreview";
 
 export default function Home() {
   return (
     <main className="h-full w-full">
-      <div className="flex flex-col gap-20"></div>
+      <div className="flex  flex-col gap-20">
+        <Banner />
+        <SparklesPreview />
+      </div>
     </main>
   );
 }
