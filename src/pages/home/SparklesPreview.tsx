@@ -10,16 +10,12 @@ export function SparklesPreview() {
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
+          minSize={0.8}
+          maxSize={2}
           particleDensity={100}
           className="w-full h-full"
-          particleColor="#FFFFFF"
         />
       </div>
-      {/* <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
-        Build great products sadfdsf
-      </h1> */}
       <div className="">
         <Skills />
       </div>

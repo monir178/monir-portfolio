@@ -28,12 +28,12 @@ export const BannerContent = () => {
 function TypeWriterEffect() {
   const words = [
     {
-      text: "Hey!",
-      className: "text-2xl lg:text-3xl",
+      text: "Hi!",
+      className: "text-2xl lg:text-3xl dark:text-purple-200",
     },
     {
-      text: "I'm",
-      className: "text-2xl lg:text-3xl",
+      text: "I'm,",
+      className: "text-2xl lg:text-3xl dark:text-purple-200",
     },
   ];
   return (
@@ -46,11 +46,11 @@ function TypeWriterEffectTwo() {
   const words = [
     {
       text: "Moniruzzaman ",
-      className: "text-purple-500 dark:text-purple-500 text-2xl lg:text-5xl",
+      className: "dark:text-purple-300 text-2xl lg:text-5xl",
     },
     {
       text: "Monir",
-      className: "text-purple-500 dark:text-purple-500 text-2xl lg:text-5xl",
+      className: "dark:text-purple-200 text-2xl lg:text-5xl",
     },
   ];
   return (

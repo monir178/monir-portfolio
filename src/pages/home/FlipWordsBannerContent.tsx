@@ -29,8 +29,8 @@ export function FlipBannerWords() {
       initial="hidden"
       animate="animate"
       className="text-left">
-      <div className="text-xl font-normal text-neutral-600 dark:text-neutral-400 ">
-        I&apos;m a dedicated MERN stack developer with expertise in
+      <div className="text-xl lg:text-2xl font-normal text-neutral-600 dark:text-neutral-400 ">
+        I&apos;m a dedicated MERN stack developer with expertise in <br />
         <FlipWords words={words} /> <br /> <br /> I also specialize in Next.js
         and Redux, creating modern, scalable web applications. Let&apos;s build
         something great together!
