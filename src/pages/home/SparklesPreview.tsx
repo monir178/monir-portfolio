@@ -2,11 +2,30 @@
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 import Skills from "./Skills";
+import Education from "./Education";
+import { motion } from "framer-motion";
+import Projects from "./Projects";
 
 export function SparklesPreview() {
+  const sparklesContent = {
+    hidden: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 2,
+        ease: "easeInOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    },
+  };
+
   return (
-    <div className="relative bg-transparent w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <div className="w-full absolute inset-0 h-screen">
+    <div className="relative bg-transparent w-full flex flex-col items-center justify-center overflow-hidden">
+      <div className="w-full absolute inset-0 h-full">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
@@ -16,9 +35,15 @@ export function SparklesPreview() {
           className="w-full h-full"
         />
       </div>
-      <div className="">
+      <motion.div
+        variants={sparklesContent}
+        initial="hidden"
+        animate="animate"
+        className=" flex flex-col gap-20 lg:gap-36 container mx-auto px-4">
         <Skills />
-      </div>
+        <Education />
+        <Projects />
+      </motion.div>
     </div>
   );
 }

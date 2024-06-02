@@ -10,6 +10,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backdropBlur: {
+        '2xl': "20px",
+        '3xl': "30px",
+        '4xl': "40px",
+      },
       animation: {
         aurora: "aurora 60s linear infinite",
         shimmer: "shimmer 2s linear infinite",
@@ -33,6 +38,11 @@ const config: Config = {
         },
       },
     },
+  },
+  variants: {
+    extend: {
+      backdropBlur: ["hover", "focus"],
+    }
   },
   plugins: [addVariablesForColors],
 };

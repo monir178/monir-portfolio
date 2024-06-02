@@ -31,9 +31,10 @@ export function FlipBannerWords() {
       className="text-left">
       <div className="text-xl lg:text-2xl font-normal text-neutral-600 dark:text-neutral-400 ">
         I&apos;m a dedicated MERN stack developer with expertise in <br />
-        <FlipWords words={words} /> <br /> <br /> I also specialize in Next.js
-        and Redux, creating modern, scalable web applications. Let&apos;s build
-        something great together!
+        <FlipWords words={words} /> <br /> <br /> I also specialize in{" "}
+        <span className="text-purple-100"> Next.js and Redux</span> , creating
+        modern, scalable web applications. Let&apos;s build something great
+        together!
       </div>
       {/* buttons */}
       <div className="my-4 mt-8 flex items-center justify-start gap-4">

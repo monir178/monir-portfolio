@@ -46,6 +46,7 @@ export const FlipWords = ({
           duration: 0.4,
           ease: "easeInOut",
           type: "spring",
+
           stiffness: 100,
           damping: 10,
         }}
