@@ -6,6 +6,7 @@ import Education from "./Education";
 import { motion } from "framer-motion";
 import Projects from "./Projects";
 import { Blogs } from "./Blogs";
+import Footer from "./Footer";
 
 export function SparklesPreview() {
   const sparklesContent = {

@@ -6,7 +6,7 @@ export function Blogs() {
       <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-4xl font-medium tracking-widest uppercase text-transparent md:text-5xl lg:text-7xl mb-8 leading-relaxed">
         Blogs
       </h1>
-      <div className="max-w-5xl mx-auto px-8">
+      <div className="">
         <BlogEffect items={projects} />
       </div>
     </div>
