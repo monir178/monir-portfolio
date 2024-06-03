@@ -1,11 +1,12 @@
 import React from "react";
 
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import { FlipBannerWords } from "./FlipWordsBannerContent";
+
 import BannerImage from "./BannerImage";
+import FlipBannerWords from "./FlipWordsBannerContent";
 
 // Banner Content Container
-export const BannerContent = () => {
+const BannerContent = () => {
   return (
     <div className="container mx-auto px-4 w-full">
       <div className="flex flex-col md:flex-row justify-between items-center  gap-4">
@@ -29,15 +30,15 @@ function TypeWriterEffect() {
   const words = [
     {
       text: "Hi!",
-      className: "text-2xl lg:text-3xl dark:text-purple-200",
+      className: "text-2xl lg:text-3xl text-purple-200 dark:text-purple-200",
     },
     {
       text: "I'm,",
-      className: "text-2xl lg:text-3xl dark:text-purple-200",
+      className: "text-2xl lg:text-3xl dark:text-purple-200 text-purple-200",
     },
   ];
   return (
-    <div className="text-xl font-normal text-neutral-600 dark:text-neutral-400  ">
+    <div className="text-xl font-normal text-purple-200 dark:text-purple-200  ">
       <TypewriterEffectSmooth words={words} />
     </div>
   );
@@ -46,16 +47,18 @@ function TypeWriterEffectTwo() {
   const words = [
     {
       text: "Moniruzzaman ",
-      className: "dark:text-purple-300 text-2xl lg:text-5xl",
+      className: "dark:text-purple-300 text-purple-300 text-2xl lg:text-5xl",
     },
     {
       text: "Monir",
-      className: "dark:text-purple-200 text-2xl lg:text-5xl",
+      className: "text-purple-200 dark:text-purple-200 text-2xl lg:text-5xl",
     },
   ];
   return (
-    <div className="text-xl font-normal text-neutral-600 uppercase dark:text-neutral-400 ">
+    <div className="text-xl font-normal text-purple-200 uppercase dark:text-purple-200 ">
       <TypewriterEffectSmooth words={words} />
     </div>
   );
 }
+
+export default BannerContent;

@@ -1,6 +1,6 @@
 import { AuroraBackground } from "@/components/ui/aurobackground";
 import React from "react";
-import { BannerContent } from "./BannerContent";
+import BannerContent from "./BannerContent";
 
 const Banner = () => {
   return (

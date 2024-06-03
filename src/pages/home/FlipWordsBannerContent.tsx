@@ -4,7 +4,7 @@ import { easeIn, motion } from "framer-motion";
 import { FileDown } from "lucide-react";
 
 // Banner Texts for FlipWords
-export function FlipBannerWords() {
+const FlipBannerWords = () => {
   const words = ["MongoDB", "ExpressJs", "ReactJs", "NodeJs"];
 
   const flipContainer = {
@@ -29,7 +29,7 @@ export function FlipBannerWords() {
       initial="hidden"
       animate="animate"
       className="text-left">
-      <div className="text-xl lg:text-2xl font-normal text-neutral-600 dark:text-neutral-400 ">
+      <div className="text-xl lg:text-2xl font-normal text-neutral-200 dark:text-neutral-200 ">
         I&apos;m a dedicated MERN stack developer with expertise in <br />
         <FlipWords words={words} /> <br /> <br /> I also specialize in{" "}
         <span className="text-purple-100"> Next.js and Redux</span> , creating
@@ -48,4 +48,6 @@ export function FlipBannerWords() {
       </div>
     </motion.div>
   );
-}
+};
+
+export default FlipBannerWords;

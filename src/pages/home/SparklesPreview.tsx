@@ -5,10 +5,11 @@ import Skills from "./Skills";
 import Education from "./Education";
 import { motion } from "framer-motion";
 import Projects from "./Projects";
-import { Blogs } from "./Blogs";
-import Footer from "./Footer";
 
-export function SparklesPreview() {
+import Footer from "./Footer";
+import Blogs from "./Blogs";
+
+const SparklesPreview = () => {
   const sparklesContent = {
     hidden: {
       opacity: 0,
@@ -49,4 +50,6 @@ export function SparklesPreview() {
       </motion.div>
     </div>
   );
-}
+};
+
+export default SparklesPreview;

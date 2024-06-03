@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export function ProjectCard() {
+const ProjectCard = () => {
   return (
     <div className="w-full h-full">
       <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]">
@@ -58,4 +58,6 @@ export function ProjectCard() {
       </div>
     </div>
   );
-}
+};
+
+export default ProjectCard;

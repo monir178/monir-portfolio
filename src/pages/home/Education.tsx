@@ -42,16 +42,16 @@ const Education = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
         {educationData.map((item) => (
           <CardContainer key={item.id} className="inter-var w-full h-full">
-            <CardBody className="bg-transparent bg-opacity-15 relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.5] dark:border-white/[0.2] border-black/[0.1] w-full h-full rounded-xl p-6 border">
+            <CardBody className="bg-transparent bg-opacity-15 relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.5] dark:border-white/[0.2] border-white/[0.2]] w-full h-full rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
-                className="text-xl font-bold  dark:text-purple-200">
+                className="text-xl font-bold  dark:text-purple-200 text-purple-200">
                 {item.type}
               </CardItem>
               <CardItem
                 as="p"
                 translateZ="60"
-                className="text-neutral-500 text-lg max-w-sm mt-2 dark:text-purple-200">
+                className="text-purple-200 text-lg max-w-sm mt-2 dark:text-purple-200">
                 {item.institution}
               </CardItem>
               <CardItem
@@ -59,7 +59,7 @@ const Education = () => {
                 as={Link}
                 href="https://twitter.com/mannupaaji"
                 target="__blank"
-                className=" rounded-xl text-sm font-normal dark:text-purple-200">
+                className=" rounded-xl text-sm font-normal text-purple-200 dark:text-purple-200">
                 {item.duration}
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">

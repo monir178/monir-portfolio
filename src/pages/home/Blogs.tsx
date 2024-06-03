@@ -1,6 +1,6 @@
 import { BlogEffect } from "@/components/ui/blog-effect";
 
-export function Blogs() {
+const Blogs = () => {
   return (
     <div id="blogs">
       <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-4xl font-medium tracking-widest uppercase text-transparent md:text-5xl lg:text-7xl mb-8 leading-relaxed">
@@ -11,7 +11,7 @@ export function Blogs() {
       </div>
     </div>
   );
-}
+};
 export const projects = [
   {
     title: "Stripe",
@@ -50,3 +50,5 @@ export const projects = [
     link: "https://microsoft.com",
   },
 ];
+
+export default Blogs;
