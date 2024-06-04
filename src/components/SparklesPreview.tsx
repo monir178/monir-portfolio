@@ -1,10 +1,10 @@
 import { SparklesCore } from "@/components/ui/sparkles";
-import Skills from "./Skills";
-import Education from "./Education";
+import Skills from "../pages/home/Skills";
+import Education from "../pages/home/Education";
 
 import Projects from "./Projects";
 
-import Blogs from "./Blogs";
+import Blogs from "../pages/home/Blogs";
 
 const SparklesPreview = () => {
   return (

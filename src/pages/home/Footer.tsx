@@ -2,7 +2,7 @@
 
 import CopyEmail from "@/components/ui/EmaiCopy";
 import Link from "next/link";
-
+import { FaWhatsapp } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { FaDiscord } from "react-icons/fa";
 import { LuFacebook } from "react-icons/lu";
@@ -30,8 +30,11 @@ const Footer = () => {
             <LuFacebook />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/moniruzzaman-monir-52a282245/"
+            href="https://api.whatsapp.com/send?phone=8801786621989"
             target="_blank">
+            <FaWhatsapp />
+          </Link>
+          <Link href="https://www.linkedin.com/in/monir178/" target="_blank">
             <CiLinkedin />
           </Link>
           <Link

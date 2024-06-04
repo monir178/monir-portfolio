@@ -1,5 +1,5 @@
 import Banner from "@/pages/home/Banner";
-import SparklesPreview from "@/pages/home/SparklesPreview";
+import SparklesPreview from "@/components/SparklesPreview";
 
 export default function Home() {
   return (

@@ -14,8 +14,8 @@ const ProjectCard = ({ project }: { project: TProject }) => {
       <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] h-full flex flex-col">
         <div className="relative h-64 w-full overflow-hidden">
           <Image
-            src={project.image}
-            alt={project.name}
+            src={project?.image}
+            alt={project?.name}
             layout="fill"
             objectFit="cover"
             className="object-cover"
@@ -25,14 +25,14 @@ const ProjectCard = ({ project }: { project: TProject }) => {
         <div className="relative p-4 flex-1 flex flex-col justify-between">
           <div>
             <h1 className="text-xl font-semibold text-purple-100 mb-2">
-              {project.name}
+              {project?.name}
             </h1>
 
             <div className="text-sm flex-wrap text-purple-200 border border-purple-300 font-medium flex gap-2 rounded-lg px-2 py-1">
               {project?.technologies?.map((tech, index) => (
                 <React.Fragment key={index}>
                   <p>{tech}</p>
-                  {index !== project.technologies.length - 1 && <p>,</p>}
+                  {index !== project?.technologies?.length - 1 && <p>,</p>}
                 </React.Fragment>
               ))}
             </div>
