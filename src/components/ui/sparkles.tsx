@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -41,7 +42,7 @@ export const SparklesCore = (props: ParticlesProps) => {
 
   const particlesLoaded = async (container?: Container) => {
     if (container) {
-      console.log(container);
+      // console.log(container);
       controls.start({
         opacity: 1,
         transition: {

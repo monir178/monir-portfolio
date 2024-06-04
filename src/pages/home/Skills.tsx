@@ -1,11 +1,32 @@
+"use client";
 import { Skill_data } from "@/constants";
 import React from "react";
 import SkillDataProvider from "@/components/data/SkillDataProvider";
 import SkillText from "@/components/data/SkillText";
+import { motion } from "framer-motion";
 
 const Skills = () => {
+  const skillContents = {
+    hidden: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 2,
+        ease: "easeInOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    },
+  };
+
   return (
-    <section
+    <motion.section
+      variants={skillContents}
+      initial="hidden"
+      animate="animate"
       id="skills"
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden"
       style={{ transform: "scale(0.9)" }}>
@@ -21,7 +42,7 @@ const Skills = () => {
           />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
