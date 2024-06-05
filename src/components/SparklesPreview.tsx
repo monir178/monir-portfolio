@@ -4,7 +4,8 @@ import Education from "../pages/home/Education";
 
 import Projects from "./Projects";
 
-import Blogs from "../pages/home/Blogs";
+import Blogs from "./Blogs";
+import Banner from "@/pages/home/Banner";
 
 const SparklesPreview = () => {
   return (
@@ -21,6 +22,7 @@ const SparklesPreview = () => {
       </div>
 
       <div className=" flex flex-col gap-20 lg:gap-36 container mx-auto px-4">
+        <Banner />
         <Skills />
         <Education />
         <Projects />

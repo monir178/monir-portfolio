@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Meteors } from "@/components/ui/meteors-effect";
-import { TBlog } from "@/pages/home/Blogs";
+import { TBlog } from "@/components/Blogs";
 
 const BlogsCard = ({ blog }: { blog: TBlog }) => {
   const [expanded, setExpanded] = useState(false);

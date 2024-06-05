@@ -11,7 +11,7 @@ const Footer = () => {
     <footer
       className="w-full container mx-auto px-4 pt-10 lg:pt-20 pb-20"
       id="contact">
-      <div className="flex sm:hidden justify-between items-center w-1/2 mb-4 mx-auto">
+      <div className="flex sm:hidden justify-between items-center w-9/12 mb-8 mx-auto">
         <CopyEmail />
       </div>
 
