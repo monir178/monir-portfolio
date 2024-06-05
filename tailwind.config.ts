@@ -18,8 +18,17 @@ const config: Config = {
       animation: {
         aurora: "aurora 60s linear infinite",
         shimmer: "shimmer 2s linear infinite",
+        "meteor-effect": "meteor 5s linear infinite",
       },
       keyframes: {
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
         shimmer: {
           from: {
             backgroundPosition: "0 0",
