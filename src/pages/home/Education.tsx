@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
@@ -66,7 +66,7 @@ const Education = () => {
                 <div className="w-full h-60 overflow-hidden rounded-xl">
                   <Image
                     src={item.img}
-                    layout="fill"
+                    fill
                     objectFit="cover"
                     className="rounded-xl group-hover/card:shadow-xl"
                     alt={item.institution}

@@ -29,7 +29,6 @@ const BannerImage = () => {
         <Image
           src="/assets/bannerImg.png"
           alt="My Photo"
-          layout="responsive"
           width={500}
           height={500}
           className="object-contain"
