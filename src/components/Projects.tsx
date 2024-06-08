@@ -12,7 +12,10 @@ export type TProject = {
 
 const Projects = async () => {
   const res = await fetch(
-    "https://portfolio-server-steel-seven.vercel.app/all-projects"
+    "https://portfolio-server-steel-seven.vercel.app/all-projects",
+    {
+      cache: "no-store",
+    }
   );
   const projects = await res.json();
 

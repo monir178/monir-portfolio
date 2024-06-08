@@ -4,11 +4,15 @@ export type TBlog = {
   _id: string;
   description: string;
   title: string;
+  img: string;
 };
 
 const Blogs = async () => {
   const res = await fetch(
-    "https://portfolio-server-steel-seven.vercel.app/all-blogs"
+    "https://portfolio-server-steel-seven.vercel.app/all-blogs",
+    {
+      cache: "no-store",
+    }
   );
   const blogs = await res.json();
 
