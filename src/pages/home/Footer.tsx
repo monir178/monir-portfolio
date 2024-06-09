@@ -23,7 +23,7 @@ const Footer = () => {
           <CopyEmail />
         </div>
 
-        <div className="text-white  text-3xl lg:text-4xl flex justify-between gap-4">
+        <div className="text-white  text-3xl lg:text-4xl flex justify-between gap-4 inset-0 z-50">
           <Link
             href="https://www.facebook.com/profile.php?id=100012573888621"
             target="_blank">
