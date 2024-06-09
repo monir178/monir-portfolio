@@ -1,48 +1,35 @@
-"use client";
-import { Skill_data } from "@/constants";
 import React from "react";
-import SkillDataProvider from "@/components/data/SkillDataProvider";
-import SkillText from "@/components/data/SkillText";
-import { motion } from "framer-motion";
 
-const Skills = () => {
-  const skillContents = {
-    hidden: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        delay: 2,
-        ease: "easeInOut",
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-      },
-    },
-  };
+import SkillText from "@/components/data/SkillText";
+import SkillCard from "@/components/SkillCard";
+
+export type TSkill = {
+  _id: string;
+  img: string;
+  name: string;
+};
+
+const Skills = async () => {
+  const res = await fetch(
+    "https://portfolio-server-steel-seven.vercel.app/skills",
+    {
+      cache: "no-store",
+    }
+  );
+  const skills = await res.json();
 
   return (
-    <motion.section
-      variants={skillContents}
-      initial="hidden"
-      animate="animate"
+    <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden mb-12"
       style={{ transform: "scale(0.9)" }}>
       <SkillText />
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Skill_data.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
+      <div className="flex flex-row justify-center flex-wrap mt-4 gap-10 items-center">
+        {skills?.data.map((skill: TSkill) => (
+          <SkillCard key={skill._id} skill={skill} />
         ))}
       </div>
-    </motion.section>
+    </section>
   );
 };
 
