@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { TSkill } from "@/pages/home/Skills";
+import { TSkill } from "@/components/Skills";
 
 const SkillCard = ({ skill }: { skill: TSkill }) => {
   const skillContents = {
