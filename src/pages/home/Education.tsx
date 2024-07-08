@@ -56,9 +56,6 @@ const Education = () => {
               </CardItem>
               <CardItem
                 translateZ={20}
-                as={Link}
-                href="https://twitter.com/mannupaaji"
-                target="__blank"
                 className=" rounded-xl text-sm font-normal text-purple-200 dark:text-purple-200">
                 {item.duration}
               </CardItem>
