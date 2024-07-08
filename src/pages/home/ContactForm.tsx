@@ -4,7 +4,7 @@ import { GlobeDemo } from "@/components/ContactGlobe";
 import { Mail } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Variants, motion } from "framer-motion";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 
 const formAnimate = {
   hidden: {
@@ -59,7 +59,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+    <div
+      className="flex flex-col-reverse md:flex-row items-center justify-center gap-6"
+      id="contact">
       <motion.form
         variants={formAnimate as Variants}
         initial="hidden"
