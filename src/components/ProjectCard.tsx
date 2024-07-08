@@ -42,7 +42,7 @@ const ProjectCard = ({ project }: { project: TProject }) => {
               <button
                 onClick={openModal}
                 className="border px-4 py-1 rounded-lg mt-2 border-gray-500 text-gray-300">
-                Read More
+                Details
               </button>
             </div>
             <div className="flex justify-between gap-2 mt-4">
