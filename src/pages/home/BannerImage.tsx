@@ -24,11 +24,12 @@ const BannerImage = () => {
       variants={imageAnimate}
       initial="hidden"
       animate="animate"
-      className="w-full flex justify-center">
+      className=" flex justify-center">
       <div className="relative w-full max-w-xs sm:max-w-md md:max-w-lg  ">
         <Image
           src="/assets/bannerImg.png"
           alt="My Photo"
+          priority={true}
           width={500}
           height={500}
           className="object-contain"

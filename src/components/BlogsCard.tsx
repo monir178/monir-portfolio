@@ -28,7 +28,7 @@ const BlogsCard = ({ blog }: { blog: TBlog }) => {
             <Image
               src={blog.img}
               fill
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               alt={blog.title}
               className="rounded-xl"
             />

@@ -10,7 +10,7 @@ const BannerContent = () => {
   return (
     <div className="container mx-auto px-4 w-full pt-20  pb-4 lg:pb-20">
       <div className="flex flex-col md:flex-row justify-between items-center  gap-4">
-        <div className="flex flex-col gap-4 flex-1">
+        <div className="flex flex-col flex-1">
           <div>
             <TypeWriterEffect />
             <TypeWriterEffectTwo />

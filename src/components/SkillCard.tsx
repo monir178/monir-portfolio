@@ -24,7 +24,13 @@ const SkillCard = ({ skill }: { skill: TSkill }) => {
   return (
     <motion.div variants={skillContents} initial="hidden" animate="animate">
       <div>
-        <Image src={imageUrl} alt={skill.name} width={100} height={100} />
+        <Image
+          src={imageUrl}
+          alt={skill.name}
+          width={80}
+          height={80}
+          style={{ width: "auto", height: "auto" }}
+        />
       </div>
     </motion.div>
   );

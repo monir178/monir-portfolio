@@ -29,12 +29,16 @@ const FlipBannerWords = () => {
       initial="hidden"
       animate="animate"
       className="text-left">
-      <div className="text-xl lg:text-2xl font-normal text-neutral-200 dark:text-neutral-200 ">
+      <div className="text-lg lg:text-xl font-normal text-neutral-200 dark:text-neutral-200 ">
         I&apos;m a dedicated MERN stack developer with expertise in <br />
         <FlipWords words={words} /> <br /> <br /> I also specialize in{" "}
         <span className="text-purple-100"> Next.js and Redux</span> , creating
-        modern, scalable web applications. Let&apos;s build something great
-        together!
+        modern, scalable web applications. I have experience working on a
+        variety of projects, from e-commerce platforms to interactive web
+        applications, always keeping up with the latest industry trends and best
+        practices. I am committed to continuous learning and improvement,
+        constantly exploring new technologies to expand my skill set. Let&apos;s
+        build something great together!
       </div>
       {/* buttons */}
       <div className="my-4 mt-8 flex items-center justify-start gap-4">

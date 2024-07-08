@@ -44,7 +44,7 @@ export const FloatingNav = ({
           smooth={true}
           offset={-100}
           duration={500}
-          className="relative items-center flex space-x-1 text-purple-100 hover:text-purple-400 transition-all cursor-pointer text-base md:text-xl">
+          className="relative items-center flex space-x-1 text-purple-400 hover:text-purple-600 transition-all cursor-pointer text-base md:text-xl">
           <span>{navItem.name}</span>
         </ScrollLink>
       ))}

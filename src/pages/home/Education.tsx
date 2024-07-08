@@ -66,8 +66,8 @@ const Education = () => {
                 <div className="w-full h-60 overflow-hidden rounded-xl">
                   <Image
                     src={item.img}
-                    fill
-                    objectFit="cover"
+                    width={500}
+                    height={400}
                     className="rounded-xl group-hover/card:shadow-xl"
                     alt={item.institution}
                   />
