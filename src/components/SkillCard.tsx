@@ -23,14 +23,16 @@ const SkillCard = ({ skill }: { skill: TSkill }) => {
   const imageUrl = skill.img;
   return (
     <motion.div variants={skillContents} initial="hidden" animate="animate">
-      <div>
-        <Image
-          src={imageUrl}
-          alt={skill.name}
-          width={80}
-          height={80}
-          style={{ width: "auto", height: "auto" }}
-        />
+      <div className="flex justify-center items-center">
+        <div className="w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16">
+          <Image
+            src={imageUrl}
+            alt={skill.name}
+            width={75} // Set the largest width required
+            height={75} // Set the largest height required
+            className="object-contain w-full h-full"
+          />
+        </div>
       </div>
     </motion.div>
   );

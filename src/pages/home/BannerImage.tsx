@@ -29,10 +29,10 @@ const BannerImage = () => {
         <Image
           src="/assets/bannerImg.png"
           alt="My Photo"
-          priority={true}
+          // priority={true}
           width={500}
           height={500}
-          className="object-contain"
+          // className="object-contain"
         />
       </div>
     </motion.div>
