@@ -28,6 +28,8 @@ const ContactForm = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -40,6 +42,11 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    const loadingToastId = toast.loading("Message sending...", {
+      position: "top-center",
+    });
+
     const response = await fetch("https://formspree.io/f/xldrekyy", {
       method: "POST",
       headers: {
@@ -48,22 +55,28 @@ const ContactForm = () => {
       body: JSON.stringify(formData),
     });
 
+    toast.dismiss(loadingToastId);
+
     if (response.ok) {
       toast.success("Message sent successfully!", {
         duration: 2000,
+        position: "top-center",
       });
       setFormData({ name: "", email: "", message: "" });
     } else {
-      alert("Failed to send message.");
+      toast.error("Failed to send message!", {
+        position: "top-center",
+      });
     }
+    setIsSubmitting(false);
   };
 
   return (
-    <div>
+    <div className="relative">
       <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-bold tracking-widest uppercase text-transparent md:text-3xl lg:text-4xl mb-4">
         Contact
       </h1>
-      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-xl font-medium   text-transparent md:text-2xl lg:text-3xl mb-4 md:mb-20">
+      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-xl font-medium text-transparent md:text-2xl lg:text-3xl mb-4 md:mb-20">
         Ready to Collaborate Worldwide!
       </h1>
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-6">
@@ -87,12 +100,13 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 bg-purple-100 border border-purple-300   rounded"
+              className="w-full px-3 py-2 bg-purple-100 border border-purple-300 rounded"
+              disabled={isSubmitting}
             />
           </div>
           <div className="mb-4">
             <label
-              className="block text-purple-200 font-bold mb-2 "
+              className="block text-purple-200 font-bold mb-2"
               htmlFor="email">
               Your Email
             </label>
@@ -103,7 +117,8 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 bg-purple-100  border-purple-300 border rounded"
+              className="w-full px-3 py-2 bg-purple-100 border-purple-300 border rounded"
+              disabled={isSubmitting}
             />
           </div>
           <div className="mb-4">
@@ -118,13 +133,15 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 bg-purple-100 border border-purple-300  rounded"></textarea>
+              className="w-full px-3 py-2 bg-purple-100 border border-purple-300 rounded"
+              disabled={isSubmitting}></textarea>
           </div>
 
           <div className="flex justify-end">
             <button
               type="submit"
-              className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+              disabled={isSubmitting}>
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-7 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                 <div className="flex items-center justify-between gap-1">
@@ -135,8 +152,6 @@ const ContactForm = () => {
             </button>
           </div>
         </motion.form>
-
-        {/* <GlobeDemo /> */}
 
         <div className="w-full flex justify-center">
           <Lottie
