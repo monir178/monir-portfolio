@@ -30,11 +30,15 @@ const FlipBannerWords = () => {
       animate="animate"
       className="text-left">
       <div className="text-lg lg:text-xl font-normal text-neutral-200 dark:text-neutral-200 ">
-        I&apos;m a dedicated MERN stack developer with expertise in <br />
-        <FlipWords words={words} /> <br /> <br /> I also specialize in{" "}
-        <span className="text-purple-100"> Next.js and Redux</span> , creating
-        modern, scalable web applications. I have experience working on a
-        variety of projects, from e-commerce platforms to interactive web
+        I&apos;m a dedicated MERN stack developer with expertise in{" "}
+        <span className="text-purple-200 font-bold">
+          {" "}
+          MongoDb, Express Js, React Js, Node Js. <br />
+        </span>
+        I also specialize in
+        <span className="text-purple-200 font-bold"> Next.js and Redux</span>,
+        creating modern, scalable web applications. I have experience working on
+        a variety of projects, from e-commerce platforms to interactive web
         applications, always keeping up with the latest industry trends and best
         practices. I am committed to continuous learning and improvement,
         constantly exploring new technologies to expand my skill set. Let&apos;s
