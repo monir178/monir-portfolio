@@ -18,10 +18,10 @@ const Blogs = async () => {
 
   return (
     <section id="blogs">
-      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-medium tracking-widest uppercase text-transparent md:text-3xl lg:text-5xl mb-8 md:mb-20">
+      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-medium tracking-widest uppercase text-transparent md:text-3xl lg:text-5xl mb-8 md:mb-12">
         Blogs
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex justify-center items-center  flex-wrap mb-12 gap-6">
         {blogs?.data.map((blog: TBlog) => (
           <BlogsCard key={blog._id} blog={blog} />
         ))}

@@ -21,7 +21,7 @@ const Skills = async () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden mb-12"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden mb-4"
       style={{ transform: "scale(0.9)" }}>
       <SkillText />
       <div className="flex flex-row justify-center flex-wrap mt-4 gap-10 items-center">

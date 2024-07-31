@@ -18,9 +18,9 @@ const BlogsCard = ({ blog }: { blog: TBlog }) => {
 
   return (
     <div>
-      <div className="relative w-full h-[420px]">
+      <div className="relative w-80 h-[350px]">
         <div className="inset-0 absolute h-full w-full bg-gradient-to-r from-purple-500 to-purple-200 transform scale-[0.80]  rounded-full blur-3xl" />
-        <div className="relative shadow-xl bg-[#030014] border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
+        <div className="relative shadow-xl bg-[#030014] border border-gray-800  px-4 py-4 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
           <h1 className="font-bold text-xl text-purple-100 mb-4 z-50">
             {blog.title}
           </h1>
@@ -31,7 +31,7 @@ const BlogsCard = ({ blog }: { blog: TBlog }) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               style={{ objectFit: "cover" }}
               alt={blog.title}
-              className="rounded-xl"
+              className="rounded-xl "
             />
           </div>
           <div
@@ -58,7 +58,7 @@ const BlogsCard = ({ blog }: { blog: TBlog }) => {
               initial={{ scale: 0.5 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.5 }}
-              className="bg-[#030014] p-8 rounded-xl text-purple-200 shadow-lg w-full max-w-3xl mx-2 lg:mx-auto">
+              className="bg-[#030014] p-8 rounded-xl text-purple-200 border border-purple-400 shadow-lg w-full max-w-5xl mx-2 lg:mx-auto">
               <h2 className="text-xl font-bold mb-4">{blog.title}</h2>
               <div
                 className="font-normal text-base text-purple-200 mb-4 relative z-50 "

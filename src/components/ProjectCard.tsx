@@ -21,9 +21,9 @@ const ProjectCard = ({ project }: { project: TProject }) => {
 
   return (
     <div>
-      <div className="w-full h-full hover:scale-105 hover:shadow-2xl hover:shadow-purple-400 transition-all">
+      <div className="w-full h-[350px] md:h-full hover:scale-105 hover:shadow-2xl hover:shadow-purple-400 transition-all">
         <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] h-full flex flex-col">
-          <div className="relative h-96 md:h-[300px] lg:h-[400px] w-full overflow-hidden">
+          <div className="relative h-96 md:h-[150px] lg:h-[250px] w-full overflow-hidden">
             <Image
               src={project?.image}
               alt={project?.name}
@@ -85,7 +85,7 @@ const ProjectCard = ({ project }: { project: TProject }) => {
               initial={{ scale: 0.5 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.5 }}
-              className="bg-[#030014] p-4 rounded-xl text-purple-200 shadow-lg max-w-sm mx-auto">
+              className="bg-[#030014] p-4 rounded-xl border border-purple-400 text-purple-200 shadow-lg max-w-5xl mx-auto">
               <div className="text-sm flex-wrap text-purple-200 font-medium flex gap-2 rounded-lg py-1 mb-2">
                 <p className="font-semibold">Used Technologies: </p>
                 {project?.technologies?.map((tech: string, index: number) => (
@@ -100,14 +100,16 @@ const ProjectCard = ({ project }: { project: TProject }) => {
                 {project.details}
               </p>
 
-              <button
-                onClick={closeModal}
-                className="relative inline-flex justify-end h-12 w-32 mt-4 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                  Close
-                </span>
-              </button>
+              <div className="flex justify-end">
+                <button
+                  onClick={closeModal}
+                  className=" ml-auto relative  h-12 w-32 mt-4 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                    Close
+                  </span>
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}

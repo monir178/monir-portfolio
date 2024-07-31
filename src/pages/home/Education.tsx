@@ -34,15 +34,15 @@ const Education = () => {
 
   return (
     <div>
-      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-medium tracking-widest uppercase text-transparent md:text-3xl lg:text-5xl mb-8 md:mb-20">
+      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-medium tracking-widest uppercase text-transparent md:text-3xl lg:text-5xl mb-8 md:mb-12">
         {" "}
         Education
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+      <div className="flex justify-center items-center gap-8  flex-wrap mb-12">
         {educationData.map((item) => (
           <CardContainer key={item.id} className="inter-var w-full h-full">
-            <CardBody className="bg-transparent bg-opacity-15 relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.5] dark:border-white/[0.2] border-white/[0.2]] w-full h-full rounded-xl p-6 border">
+            <CardBody className="bg-transparent bg-opacity-15 relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.5] dark:border-white/[0.2] border-white/[0.2]] w-[300px] h-[350px] rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold  dark:text-purple-200 text-purple-200">
@@ -60,21 +60,20 @@ const Education = () => {
                 {item.duration}
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
-                <div className="w-full h-60 overflow-hidden rounded-xl">
+                <div className="w-full  overflow-hidden rounded-xl">
                   <Image
                     src={item.img}
                     width={500}
                     height={400}
-                    className="rounded-xl group-hover/card:shadow-xl"
+                    className="rounded-xl group-hover/card:shadow-xl h-[150px]"
                     alt={item.institution}
                   />
                 </div>
               </CardItem>
-              <div className="flex justify-between items-center mt-6">
+              <div className="flex justify-between items-center mt-2">
                 <CardItem
                   translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl   flex items-center gap-2 text-purple-200 text-lg font-bold">
+                  className=" py-2 rounded-xl   flex items-center gap-2 text-purple-200  font-bold">
                   <MapPinned />
                   <span>{item.location}</span>
                 </CardItem>

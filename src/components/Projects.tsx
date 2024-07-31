@@ -21,10 +21,10 @@ const Projects = async () => {
 
   return (
     <div id="projects">
-      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-medium tracking-widest uppercase text-transparent md:text-3xl lg:text-5xl mb-10 md:mb-20 leading-relaxed">
+      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-medium tracking-widest uppercase text-transparent md:text-3xl lg:text-5xl mb-8 md:mb-12 leading-relaxed">
         Recent Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 mb-12 gap-y-10 md:gap-y-6">
+      <div className="flex justify-center items-center  flex-wrap mb-6 gap-8">
         {projects?.data.map((project: TProject) => (
           <ProjectCard key={project._id} project={project} />
         ))}

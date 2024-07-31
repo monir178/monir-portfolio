@@ -32,7 +32,7 @@ const BannerImage = () => {
           // priority={true}
           width={500}
           height={500}
-          // className="object-contain"
+          className=" lg:p-10"
         />
       </div>
     </motion.div>

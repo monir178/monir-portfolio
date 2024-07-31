@@ -8,7 +8,7 @@ import { FaDiscord } from "react-icons/fa";
 import { LuFacebook } from "react-icons/lu";
 const Footer = () => {
   return (
-    <footer className="w-full container mx-auto px-4 pt-10 lg:pt-20 pb-20">
+    <footer className="w-full container mx-auto  pt-10 px-4 lg:pt-20 pb-20">
       <div className="flex sm:hidden justify-between items-center w-9/12 mb-8 mx-auto">
         <CopyEmail />
       </div>

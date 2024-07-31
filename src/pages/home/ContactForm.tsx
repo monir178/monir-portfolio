@@ -26,6 +26,7 @@ const ContactForm = () => {
     name: "",
     email: "",
     message: "",
+    phone: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,7 +63,7 @@ const ContactForm = () => {
         duration: 2000,
         position: "top-center",
       });
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "", phone: "" });
     } else {
       toast.error("Failed to send message!", {
         position: "top-center",
@@ -72,7 +73,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="w-full px-4">
       <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-bold tracking-widest uppercase text-transparent md:text-3xl lg:text-4xl mb-4">
         Contact
       </h1>
@@ -115,6 +116,23 @@ const ContactForm = () => {
               id="email"
               name="email"
               value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 bg-purple-100 border-purple-300 border rounded"
+              disabled={isSubmitting}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              className="block text-purple-200 font-bold mb-2"
+              htmlFor="phone">
+              Your Phone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
               onChange={handleChange}
               required
               className="w-full px-3 py-2 bg-purple-100 border-purple-300 border rounded"
