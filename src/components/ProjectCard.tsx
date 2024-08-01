@@ -86,19 +86,39 @@ const ProjectCard = ({ project }: { project: TProject }) => {
               animate={{ scale: 1 }}
               exit={{ scale: 0.5 }}
               className="bg-[#030014] p-4 rounded-xl border border-purple-400 text-purple-200 shadow-lg max-w-5xl mx-auto">
-              <div className="text-sm flex-wrap text-purple-200 font-medium flex gap-2 rounded-lg py-1 mb-2">
-                <p className="font-semibold">Used Technologies: </p>
+              <div className="text-sm  items-center text-purple-200 font-medium flex gap-2 rounded-lg py-1 mb-2">
+                <p className="font-semibold text-purple-300">
+                  Used Technologies:{" "}
+                </p>
                 {project?.technologies?.map((tech: string, index: number) => (
-                  <React.Fragment key={index}>
-                    <p>{tech}</p>
-                    {index !== project?.technologies?.length - 1 && <p>,</p>}
-                  </React.Fragment>
+                  <div
+                    className="flex justify-between items-center gap-4"
+                    key={index}>
+                    <Image
+                      src={tech}
+                      alt="technology name"
+                      width={22}
+                      height={28}
+                    />
+                  </div>
                 ))}
               </div>
               <p>
-                <span className="font-semibold">Project Overview:</span>
+                <span className="font-semibold text-purple-300">
+                  Project Overview:{" "}
+                </span>
                 {project.details}
               </p>
+              <div className="mt-4">
+                <p className="text-purple-300 font-bold">Features: </p>
+                <ul className="list-disc">
+                  {project?.features.map((feature, index) => (
+                    <li className="ms-4" key={index}>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <div className="flex justify-end">
                 <button

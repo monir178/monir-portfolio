@@ -8,6 +8,7 @@ export type TProject = {
   image: string;
   technologies: string[];
   details: string;
+  features: string[];
 };
 
 const Projects = async () => {

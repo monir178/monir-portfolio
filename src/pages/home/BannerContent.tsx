@@ -9,7 +9,7 @@ import FlipBannerWords from "./FlipWordsBannerContent";
 const BannerContent = () => {
   return (
     <div className="container mx-auto px-4 w-full pt-20  pb-4 ">
-      <div className="flex flex-col lg:flex-row justify-between items-center  gap-4">
+      <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-between items-center  gap-4 lg:gap-14">
         <div className="flex flex-col flex-1">
           <div>
             <TypeWriterEffect />
