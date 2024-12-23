@@ -47,7 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[90vh] px-4 py-12">
+    <section id="contact" className="relative w-full min-h-[90vh] px-4 py-12">
       {/* Background Globe for mobile/tablet */}
       <div className="absolute inset-0 lg:hidden">
         <Earth
