@@ -1,25 +1,9 @@
 "use client";
 import { Mail } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { toast } from "sonner";
-import Lottie from "lottie-react";
-import animationData from "../../../public/assets/contact.json";
-
-const formAnimate = {
-  hidden: {
-    boxShadow: "0px 0px 20px rgba(192, 132, 252, 1)",
-  },
-  animate: {
-    boxShadow: "0px 0px 0px rgba(0,0,0,0)",
-    transition: {
-      ease: "easeInOut",
-      duration: 0.7,
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
-  },
-};
+import Earth from "@/components/ui/globe";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -28,158 +12,141 @@ const ContactForm = () => {
     message: "",
     phone: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const loadingToastId = toast.loading("Message sending...", {
-      position: "top-center",
-    });
+    const loadingToastId = toast.loading("Message sending...");
 
-    const response = await fetch("https://formspree.io/f/xldrekyy", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    toast.dismiss(loadingToastId);
-
-    if (response.ok) {
-      toast.success("Message sent successfully!", {
-        duration: 2000,
-        position: "top-center",
+    try {
+      const response = await fetch("https://formspree.io/f/xldrekyy", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", message: "", phone: "" });
-    } else {
-      toast.error("Failed to send message!", {
-        position: "top-center",
-      });
+
+      if (response.ok) {
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "", phone: "" });
+      } else {
+        throw new Error();
+      }
+    } catch {
+      toast.error("Failed to send message!");
+    } finally {
+      toast.dismiss(loadingToastId);
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   return (
-    <div className="w-full px-4">
-      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-bold tracking-widest uppercase text-transparent md:text-3xl lg:text-4xl mb-4">
-        Contact
-      </h1>
-      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-xl font-medium text-transparent md:text-2xl lg:text-3xl mb-4 md:mb-20">
-        Ready to Collaborate Worldwide!
-      </h1>
-      <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-6">
-        <motion.form
-          id="contact"
-          variants={formAnimate as Variants}
-          initial="hidden"
-          animate="animate"
-          onSubmit={handleSubmit}
-          className="w-full  p-4 border border-purple-400 rounded-lg z-10">
-          <div className="mb-4">
-            <label
-              className="block font-bold mb-2 text-purple-200"
-              htmlFor="name">
-              Your Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 bg-purple-100 border border-purple-300 rounded"
-              disabled={isSubmitting}
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-purple-200 font-bold mb-2"
-              htmlFor="email">
-              Your Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 bg-purple-100 border-purple-300 border rounded"
-              disabled={isSubmitting}
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-purple-200 font-bold mb-2"
-              htmlFor="phone">
-              Your Phone
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 bg-purple-100 border-purple-300 border rounded"
-              disabled={isSubmitting}
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-purple-200 font-bold mb-2"
-              htmlFor="message">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 bg-purple-100 border border-purple-300 rounded"
-              disabled={isSubmitting}></textarea>
-          </div>
+    <section className="relative w-full min-h-[90vh] px-4 py-12">
+      {/* Background Globe for mobile/tablet */}
+      <div className="absolute inset-0 lg:hidden">
+        <Earth
+          className="w-full h-full opacity-20"
+          baseColor={[0.7, 0.3, 0.9]}
+          glowColor={[0.6, 0.2, 0.8]}
+          mapBrightness={6}
+          scale={2}
+          dark={1}
+        />
+      </div>
 
-          <div className="flex justify-end">
-            <button
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-3xl anton-text tracking-wider font-medium bg-clip-text text-transparent bg-gradient-to-t from-purple-300 to-violet-600 md:text-6xl text-center mb-8">
+          Get in Touch
+        </motion.h1>
+
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <motion.form
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            onSubmit={handleSubmit}
+            className="w-full lg:w-1/2 space-y-6 bg-purple-950/30 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/20">
+            {["name", "email", "phone"].map((field) => (
+              <div key={field}>
+                <label className="block text-purple-200 text-sm font-medium mb-2 capitalize">
+                  {field}
+                </label>
+                <input
+                  type={
+                    field === "email"
+                      ? "email"
+                      : field === "phone"
+                      ? "tel"
+                      : "text"
+                  }
+                  name={field}
+                  value={formData[field as keyof typeof formData]}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-purple-900/40 border border-purple-500/30 rounded-lg 
+                           text-purple-100 placeholder-purple-300/50 focus:outline-none focus:ring-2 
+                           focus:ring-purple-500/50 transition-all duration-300"
+                  placeholder={`Enter your ${field}`}
+                  disabled={isSubmitting}
+                />
+              </div>
+            ))}
+
+            <div>
+              <label className="block text-purple-200 text-sm font-medium mb-2">
+                Message
+              </label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={4}
+                className="w-full px-4 py-3 bg-purple-900/40 border border-purple-500/30 rounded-lg 
+                         text-purple-100 placeholder-purple-300/50 focus:outline-none focus:ring-2 
+                         focus:ring-purple-500/50 transition-all duration-300 resize-none"
+                placeholder="Your message..."
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <motion.button
               type="submit"
-              className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-              disabled={isSubmitting}>
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-7 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                <div className="flex items-center justify-between gap-1">
-                  <Mail size={16} />
-                  <span>Send Message</span>
-                </div>
-              </span>
-            </button>
-          </div>
-        </motion.form>
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              disabled={isSubmitting}
+              className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg
+                       text-white font-medium flex items-center justify-center gap-2 
+                       hover:opacity-90 transition-all duration-300 disabled:opacity-50">
+              <Mail size={18} />
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </motion.button>
+          </motion.form>
 
-        <div className="w-full flex justify-center">
-          <Lottie
-            animationData={animationData}
-            loop={true}
-            className="w-full h-full max-w-sm max-h-sm"
-          />
+          {/* Desktop Globe */}
+          <div className="hidden lg:flex w-1/2 items-center justify-center">
+            <Earth
+              className="w-[500px] h-[500px]"
+              baseColor={[0.7, 0.3, 0.9]}
+              glowColor={[0.6, 0.2, 0.8]}
+              mapBrightness={6}
+              scale={1.1}
+              diffuse={1.2}
+              dark={1}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

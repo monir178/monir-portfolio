@@ -18,7 +18,7 @@ const Blogs = async () => {
 
   return (
     <section id="blogs">
-      <h1 className="bg-gradient-to-br from-purple-400 to-purple-100 bg-clip-text text-center text-2xl font-medium tracking-widest uppercase text-transparent md:text-3xl lg:text-5xl mb-8 md:mb-12">
+      <h1 className="text-3xl anton-text tracking-wider font-medium bg-clip-text text-transparent bg-gradient-to-t from-purple-300 to-violet-600 md:text-6xl text-center   mb-8 md:mb-12">
         Blogs
       </h1>
       <div className="flex justify-center items-center  flex-wrap mb-12 gap-6">

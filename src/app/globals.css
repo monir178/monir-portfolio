@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.-toutfitext {
+  font-family: var(--font-outfit);
+}
+
+.bebas-text {
+  font-family: var(--font-bebas);
+}
+
+.anton-text {
+  font-family: var(--font-anton);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for all elements with the scrollbar-hidden class */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}

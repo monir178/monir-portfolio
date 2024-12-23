@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit, Anton, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/pages/home/Footer";
 import StarsCanvas from "@/components/ui/starBackground";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const anton = Anton({
+  subsets: ["vietnamese"],
+  weight: "400",
+  variable: "--font-anton",
+});
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
+});
 
 export const metadata: Metadata = {
-  title: "Monir's Portfolio",
+  title: "Moniruzzaman Monir's Portfolio Website",
   description: "This is Moniruzzaman Monir's Portfolio",
 };
 
@@ -20,7 +30,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#030014]  `}>
+      <body
+        className={`${outfit.variable} ${anton.variable} ${bebasNeue.variable} bg-[#030014]  `}>
         <Toaster />
         <StarsCanvas />
         <Navbar />
