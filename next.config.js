@@ -13,7 +13,7 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "https://your-new-portfolio-link.com/:path*", // replace with your new site URL
+        destination: "https://www.monir178.live/:path*", // replace with your new site URL
         permanent: true, // sends 308 status for SEO-friendly permanent redirect
       },
     ];
